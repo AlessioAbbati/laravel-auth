@@ -17,10 +17,10 @@
                 <td>{{ $project->author }}</td>
                 <td>{{ $project->languages }}</td>
                 <td>
-                    <a class="btn btn-primary" href="{{ route('admin.projects.show', ['post' => $project->id]) }}">View</a>
-                    <a class="btn btn-warning" href="{{ route('admin.projects.edit', ['post' => $project->id]) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('admin.project.show', ['project' => $project->id]) }}">View</a>
+                    <a class="btn btn-warning" href="{{ route('admin.project.edit', ['project' => $project->id]) }}">Edit</a>
                     <form
-                        action="{{ route('admin.projects.destroy', ['project' => $project->id]) }}"
+                        action="{{ route('admin.project.destroy', ['project' => $project->id]) }}"
                         method="post"
                         class="d-inline-block"
                     >
