@@ -20,4 +20,5 @@
 
 @section('contents')
     benvenuto
+    {{-- <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">index</a> --}}
 @endsection
