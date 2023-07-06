@@ -8,12 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    @include('admin.includes.header')
+    @include('guests.includes.header')
 
-    <main>
-        @yield('contents')
-    </main>
+    <div class="container">
+        <main>
+            @yield('contents')
+        </main>
+    </div>
 
-    @include('admin.includes.footer')
+    @include('guests.includes.footer')
 </body>
 </html>
