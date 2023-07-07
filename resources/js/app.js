@@ -15,7 +15,7 @@ if (confirmDelete) {
     button.addEventListener('click', function () {
         
        console.log('hai cliccato il bottone con id ' + this.dataset.id);
-       confirmDelete.action = confirmDelete.dataset.template.replace('*****', confirmDelete.dataset.id)
+       confirmDelete.action = confirmDelete.dataset.template.replace('*****', this.dataset.id)
     })
 }) 
 }

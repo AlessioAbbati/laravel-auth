@@ -11,7 +11,7 @@ class ProjectController extends Controller
     private $validations = [
         'title'             => 'required|string|max:50',
         'author'            => 'required|string|max:30',
-        'creaton_date'      => 'required|date',
+        'creation_date'      => 'required|date',
         'last_update'       => 'required|date',
         'collaborators'     => 'string|max:150',
         'description'       => 'string',
@@ -44,6 +44,7 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $request->validate($this->validations, $this->validations_messages);
+        
 
         $data = $request->all();
 
