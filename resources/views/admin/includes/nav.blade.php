@@ -24,6 +24,9 @@
                         <li><a class="dropdown-item" href="{{ route('admin.project.create') }}">Add</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a class="nav-link" href="{{ route('admin.project.trashed') }}">Bin</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">

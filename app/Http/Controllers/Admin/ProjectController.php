@@ -106,4 +106,31 @@ class ProjectController extends Controller
         $project->delete(); // attivando i soft delete il delete viene modificato automaticamente
         return to_route('admin.project.index')->with('delete_success', $project);
     }
+
+    public function restore($id)
+    {
+        Project::withTrashed()->where('id', $id)->restore();
+
+        $project = Project::find($id);
+
+        return to_route('admin.project.index')->with('restore_success', $project);
+    }
+
+    public function trashed()
+    {
+        $trashedProjects = Project::onlyTrashed()->paginate(3); 
+
+        
+
+        return view('admin.projects.trashed', compact('trashedProjects'));
+    }
+
+    public function hardDelete($id)
+    {
+        $project = Project::withTrashed()->find($id);
+        $project->forceDelete();
+
+        return to_route('admin.project.trashed')->with('delete_success', $project);
+    
+    }
 }
