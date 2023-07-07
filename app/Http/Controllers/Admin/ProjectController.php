@@ -16,7 +16,7 @@ class ProjectController extends Controller
         'collaborators'     => 'string|max:150',
         'description'       => 'string',
         'languages'         => 'required|string|max:50',
-        'link_github'       => 'required|string|max:200',
+        'link_github'       => 'required|url|max:200',
         
     ];
 
