@@ -102,6 +102,7 @@ class ProjectController extends Controller
     
     public function destroy(Project $project)
     {
-        //
+        $project->delete(); // attivando i soft delete il delete viene modificato automaticamente
+        return to_route('admin.project.index')->with('delete_success', $project);
     }
 }
