@@ -34,16 +34,21 @@
                 <td>
                     <a class="btn btn-primary" href="{{ route('admin.project.show', ['project' => $project]) }}">View</a>
                     <a class="btn btn-warning" href="{{ route('admin.project.edit', ['project' => $project]) }}">Edit</a>
-                    <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $project->id }}">
+                    {{-- <button type="button" class="btn btn-danger js-delete" data-bs-toggle="modal" data-bs-target="#deleteModal" data-id="{{ $project->id }}">
                         Delete
-                    </button>
+                    </button> --}}
+                    <form action="{{ route('admin.project.destroy', ['project' => $project->id]) }}" method="POST" class="d-inline-block">
+                        @csrf
+                        @method('delete')
+                        <button class="btn btn-danger" href="">Delete</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
     </tbody>
 </table>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -69,7 +74,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <a class="btn btn-primary" href="{{ route('admin.project.create') }}">New</a>
 {{ $projects->links() }}
 @endsection
