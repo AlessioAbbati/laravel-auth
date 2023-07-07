@@ -33,6 +33,6 @@
         @endforeach
     </tbody>
 </table>
-
+<a class="btn btn-primary" href="{{ route('admin.project.create') }}">New</a>
 {{ $projects->links() }}
 @endsection
