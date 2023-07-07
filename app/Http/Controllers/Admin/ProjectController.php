@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    // private $validations = [
+    private $validations = [
+        'title'             => 'required|string|max:50',
+        'author'            => 'required|string|max:30',
+        'creaton_date'      => 'required|date',
+        'last_update'       => 'required|date',
+        'collaborators'     => 'string|max:150',
+        'description'       => 'string',
+        'languages'         => 'required|string|max:50',
+        'link_github'       => 'required|string|max:200',
         
-    // ];
+    ];
 
     public function index()
     {
@@ -28,7 +36,7 @@ class ProjectController extends Controller
     
     public function store(Request $request)
     {
-        // $request->validate($this->validations);
+        $request->validate($this->validations);
 
         $data = $request->all();
 
@@ -63,7 +71,7 @@ class ProjectController extends Controller
     
     public function update(Request $request, Project $project)
     {
-        // $request->validate($this->validations);
+        $request->validate($this->validations);
 
         $data = $request->all();
 
