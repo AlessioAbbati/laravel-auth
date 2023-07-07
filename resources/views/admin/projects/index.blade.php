@@ -30,7 +30,7 @@
                 <th scope="row">{{ $project->title }}</th>
                 <td>{{ $project->author }}</td>
                 <td>{{ $project->languages }}</td>
-                <td>{{ $project->link_github }}</td>
+                <td><a href="{{ $project->link_github }}">Github</a></td>
                 <td>
                     <a class="btn btn-primary" href="{{ route('admin.project.show', ['project' => $project]) }}">View</a>
                     <a class="btn btn-warning" href="{{ route('admin.project.edit', ['project' => $project]) }}">Edit</a>
