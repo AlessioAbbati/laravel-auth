@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    
+    // private $validations = [
+        
+    // ];
+
     public function index()
     {
         $projects = Project::paginate(3);
@@ -19,13 +22,31 @@ class ProjectController extends Controller
     
     public function create()
     {
-        return view('projects.create');
+        return view('admin.projects.create');
     }
 
     
     public function store(Request $request)
     {
-        
+        // $request->validate($this->validations);
+
+        $data = $request->all();
+
+        $newProject = new Project();
+
+        $newProject->title              = $data['title'];
+        $newProject->author          = $data['author'];
+        $newProject->creation_date             = $data['creation_date'];
+        $newProject->last_update          = $data['last_update'];
+        $newProject->collaborators             = $data['collaborators'];
+        $newProject->description      = $data['description'];
+        $newProject->languages      = $data['languages'];
+        $newProject->link_github      = $data['link_github'];
+
+        $newProject->save(); // per salvare una nuova riga
+
+        // return redirect()->route('project.show', ['project' => $newProject]);
+        return to_route('admin.projects.show', ['project' => $newProject]);
     }
 
    
@@ -36,7 +57,7 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     
