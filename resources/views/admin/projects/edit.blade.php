@@ -25,7 +25,7 @@
             <label for="author" class="form-label">Author</label>
             <input
                 type="text"
-                class="form-control @error('src') is-invalid @enderror"
+                class="form-control @error('author') is-invalid @enderror"
                 id="author"
                 name="author"
                 value="{{ old('author', $project->author) }}"
