@@ -8,7 +8,7 @@
 @endphp
 <div class="alert alert-danger">
     "{{ $project->title }}" has been moved to the trash!!
-    <form action="{{ route("admin.project.restore", ['project' => $project] )}}" method="post">
+    <form action="{{ route("admin.project.cancel", ['project' => $project] )}}" method="post">
         @csrf
         <button class="btn btn-warning">Cancel</button>
     </form>

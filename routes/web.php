@@ -19,6 +19,7 @@ Route::middleware(['auth', 'verified'])
         Route::resource('project', ProjectController::class);
         route::delete('/project/{project}/hardDelete', [ProjectController::class, 'hardDelete'])->name('project.hardDelete');
         route::post('/project/{project}/restore', [ProjectController::class, 'restore'])->name('project.restore');
+        route::post('/project/{project}/cancel', [ProjectController::class, 'cancel'])->name('project.cancel');
 });
 
 Route::middleware('auth')
