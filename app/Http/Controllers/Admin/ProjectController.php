@@ -113,7 +113,7 @@ class ProjectController extends Controller
 
         $project = Project::find($id);
 
-        return to_route('admin.project.index')->with('restore_success', $project);
+        return to_route('admin.project.trashed')->with('restore_success', $project);
     }
 
     public function trashed()

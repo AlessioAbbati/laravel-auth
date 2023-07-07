@@ -8,10 +8,6 @@
 @endphp
 <div class="alert alert-danger">
     "{{ $project->title }}" has been deleted!!
-    {{-- <form action="{{ route("admin.project.restore", ['project' => $project] )}}" method="post">
-        @csrf
-        <button class="btn btn-warning">Restore</button>
-    </form> --}}
 </div>
 @endif
 
