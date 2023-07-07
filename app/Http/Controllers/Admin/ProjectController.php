@@ -20,6 +20,13 @@ class ProjectController extends Controller
         
     ];
 
+    private $validations_messages = [
+        'required'      => 'il campo :attribute è obbligatorio',
+        'max'           => 'il campo :attribute deve avere almeno :max caratteri',
+        'url'           => 'il campo deve essere un url valido',
+    
+    ];
+
     public function index()
     {
         $projects = Project::paginate(3);
@@ -36,20 +43,20 @@ class ProjectController extends Controller
     
     public function store(Request $request)
     {
-        $request->validate($this->validations);
+        $request->validate($this->validations, $this->validations_messages);
 
         $data = $request->all();
 
         $newProject = new Project();
 
         $newProject->title              = $data['title'];
-        $newProject->author          = $data['author'];
-        $newProject->creation_date             = $data['creation_date'];
-        $newProject->last_update          = $data['last_update'];
-        $newProject->collaborators             = $data['collaborators'];
-        $newProject->description      = $data['description'];
-        $newProject->languages      = $data['languages'];
-        $newProject->link_github      = $data['link_github'];
+        $newProject->author             = $data['author'];
+        $newProject->creation_date      = $data['creation_date'];
+        $newProject->last_update        = $data['last_update'];
+        $newProject->collaborators      = $data['collaborators'];
+        $newProject->description        = $data['description'];
+        $newProject->languages          = $data['languages'];
+        $newProject->link_github        = $data['link_github'];
 
         $newProject->save(); // per salvare una nuova riga
 
@@ -71,7 +78,7 @@ class ProjectController extends Controller
     
     public function update(Request $request, Project $project)
     {
-        $request->validate($this->validations);
+        $request->validate($this->validations, $this->validations_messages);
 
         $data = $request->all();
 
