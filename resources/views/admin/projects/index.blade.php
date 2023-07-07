@@ -8,10 +8,10 @@
 @endphp
 <div class="alert alert-danger">
     "{{ $project->title }}" has been moved to the trash!!
-    {{-- <form action="{{ route("admin.project.restore", ['project' => $project] )}}" method="post">
+    <form action="{{ route("admin.project.restore", ['project' => $project] )}}" method="post">
         @csrf
-        <button class="btn btn-warning">Restore</button>
-    </form> --}}
+        <button class="btn btn-warning">Cancel</button>
+    </form>
 </div>
 @endif
 
@@ -30,6 +30,7 @@
                 <th scope="row">{{ $project->title }}</th>
                 <td>{{ $project->author }}</td>
                 <td>{{ $project->languages }}</td>
+                <td>{{ $project->link_github }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{ route('admin.project.show', ['project' => $project]) }}">View</a>
                     <a class="btn btn-warning" href="{{ route('admin.project.edit', ['project' => $project]) }}">Edit</a>
