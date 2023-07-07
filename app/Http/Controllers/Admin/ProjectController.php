@@ -46,7 +46,7 @@ class ProjectController extends Controller
         $newProject->save(); // per salvare una nuova riga
 
         // return redirect()->route('project.show', ['project' => $newProject]);
-        return to_route('admin.projects.show', ['project' => $newProject]);
+        return to_route('admin.project.show', ['project' => $newProject]);
     }
 
    
@@ -68,18 +68,18 @@ class ProjectController extends Controller
         $data = $request->all();
 
         $project->title              = $data['title'];
-        $project->author          = $data['author'];
-        $project->creation_date             = $data['creation_date'];
-        $project->last_update          = $data['last_update'];
-        $project->collaborators             = $data['collaborators'];
-        $project->description      = $data['description'];
-        $project->languages      = $data['languages'];
-        $project->link_github      = $data['link_github'];
+        $project->author             = $data['author'];
+        $project->creation_date      = $data['creation_date'];
+        $project->last_update        = $data['last_update'];
+        $project->collaborators      = $data['collaborators'];
+        $project->description        = $data['description'];
+        $project->languages          = $data['languages'];
+        $project->link_github        = $data['link_github'];
 
         $project->update(); // per salvare una nuova riga
 
         // return redirect()->route('project.show', ['project' => $newProject]);
-        return to_route('admin.projects.show', ['project' => $project]);
+        return to_route('admin.project.show', ['project' => $project]);
 
 
     }
