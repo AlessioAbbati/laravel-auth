@@ -68,7 +68,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/proj-html-vuejs.git",
     ],
     [
-        'category_id' => '4',
+        'category_id' => '5',
         "title" => "Travel Agency",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-07-04",
