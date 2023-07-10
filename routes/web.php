@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
-use App\Http\Controllers\Guests\PageController as GuestsPageController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PageController as AdminPageController;
+use App\Http\Controllers\Guests\PageController as GuestsPageController;
 
 
 
@@ -17,6 +18,7 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [AdminPageController::class, 'dashboard'])->name('dashboard');
         route::get('/project/trashed', [ProjectController::class, 'trashed'])->name('project.trashed');
         Route::resource('project', ProjectController::class);
+        Route::resource('category', CategoryController::class);
         route::delete('/project/{project}/hardDelete', [ProjectController::class, 'hardDelete'])->name('project.hardDelete');
         route::post('/project/{project}/restore', [ProjectController::class, 'restore'])->name('project.restore');
         route::post('/project/{project}/cancel', [ProjectController::class, 'cancel'])->name('project.cancel');
