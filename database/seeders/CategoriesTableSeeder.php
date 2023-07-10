@@ -15,32 +15,10 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = [
-            [
-                'name' => 'HTML-CSS',
-                'description' => 'lorem ipsum',
-            ],
-            [
-                'name' => 'JS',
-                'description' => 'lorem ipsum',
-            ],
-            [
-                'name' => 'VUE-JS',
-                'description' => 'lorem ipsum',
-            ],
-            [
-                'name' => 'PHP',
-                'description' => 'lorem ipsum',
-            ],
-            [
-                'name' => 'BLADE',
-                'description' => 'lorem ipsum',
-            ],
 
-        ];
-
-        foreach ($categories as $category) {
-            Category::create($category);
+        foreach(config('categories') as $objCategory) {
+            
+            Category::create($objCategory);
         }
     }
 }
