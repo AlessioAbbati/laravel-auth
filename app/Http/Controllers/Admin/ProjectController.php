@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,9 @@ class ProjectController extends Controller
 {
     private $validations = [
         'title'             => 'required|string|max:50',
+        'category_id'       => 'required|integer|exists:categories,id',
         'author'            => 'required|string|max:30',
-        'creation_date'      => 'required|date',
+        'creation_date'     => 'required|date',
         'last_update'       => 'required|date',
         'collaborators'     => 'string|max:150',
         'description'       => 'string',
@@ -24,7 +26,7 @@ class ProjectController extends Controller
         'required'      => 'il campo :attribute è obbligatorio',
         'max'           => 'il campo :attribute deve avere almeno :max caratteri',
         'url'           => 'il campo deve essere un url valido',
-    
+        'exists'        => 'Valore non valido',
     ];
 
     public function index()
@@ -37,7 +39,8 @@ class ProjectController extends Controller
     
     public function create()
     {
-        return view('admin.projects.create');
+        $categories = Category::all();
+        return view('admin.projects.create', compact('categories'));
     }
 
     
@@ -51,6 +54,7 @@ class ProjectController extends Controller
         $newProject = new Project();
 
         $newProject->title              = $data['title'];
+        $newProject->category_id        = $data['category_id'];
         $newProject->author             = $data['author'];
         $newProject->creation_date      = $data['creation_date'];
         $newProject->last_update        = $data['last_update'];
@@ -73,7 +77,8 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $categories = Category::all();
+        return view('admin.projects.edit', compact('project', 'categories'));
     }
 
     

@@ -21,6 +21,18 @@
         </div>
 
         <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" name="category_id">
+                <option selected>Open this select menu</option>
+
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+            
+        </div>  
+
+        <div class="mb-3">
             <label for="author" class="form-label">Author</label>
             <input
                 type="text"

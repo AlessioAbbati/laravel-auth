@@ -2,24 +2,13 @@
 
 return  [
     [
-        'name' => 'HTML-CSS',
+        'name' => 'front-end',
         'description' => 'lorem ipsum',
     ],
     [
-        'name' => 'JS',
+        'name' => 'back-end',
         'description' => 'lorem ipsum',
     ],
-    [
-        'name' => 'VUE-JS',
-        'description' => 'lorem ipsum',
-    ],
-    [
-        'name' => 'PHP',
-        'description' => 'lorem ipsum',
-    ],
-    [
-        'name' => 'BLADE',
-        'description' => 'lorem ipsum',
-    ],
+    
 
 ];
