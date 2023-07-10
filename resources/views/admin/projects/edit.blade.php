@@ -24,7 +24,7 @@
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" id="category" name="category_id">
-                <option selected>Open this select menu</option>
+                <option selected>Change Category</option>
 
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @if ($project->category->id === $category->id) selected @endif>{{ $category->name }}</option>
