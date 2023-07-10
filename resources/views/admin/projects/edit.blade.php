@@ -27,10 +27,15 @@
                 <option selected>Change Category</option>
 
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}" @if ($project->category->id === $category->id) selected @endif>{{ $category->name }}</option>
+                    <option 
+                        value="{{ $category->id }}"
+                        @if (old('category_id', $project->category->id) == $category->id) selected @endif
+                    >{{ $category->name }}</option>
                 @endforeach
             </select>
-            
+            <div class="invalid-feedback">
+                @error('category_id') {{ $message }} @enderror
+            </div>
         </div>  
 
         <div class="mb-3">

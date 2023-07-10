@@ -89,6 +89,7 @@ class ProjectController extends Controller
         $data = $request->all();
 
         $project->title              = $data['title'];
+        $project->category_id        = $data['category_id'];
         $project->author             = $data['author'];
         $project->creation_date      = $data['creation_date'];
         $project->last_update        = $data['last_update'];

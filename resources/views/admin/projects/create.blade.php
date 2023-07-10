@@ -29,7 +29,9 @@
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
-            
+            <div class="invalid-feedback">
+                @error('category_id') {{ $message }} @enderror
+            </div>
         </div>  
 
         <div class="mb-3">
