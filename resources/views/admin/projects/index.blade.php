@@ -21,6 +21,7 @@
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Languages</th>
+            <th scope="col">Links</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
