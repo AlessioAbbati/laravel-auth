@@ -2,6 +2,7 @@
 
 return [
     [
+        'category_id' => '1',
         "title" => "SpotifyWeb",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-03-22",
@@ -12,6 +13,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/html-css-spotifyweb.git",
     ],
     [
+        'category_id' => '2',
         "title" => "Minefield",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-04-26",
@@ -22,6 +24,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/js-campominato-dom.git",
     ],
     [
+        'category_id' => '2',
         "title" => "Social Posts",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-05-03",
@@ -32,6 +35,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/js-social-posts.git",
     ],
     [
+        'category_id' => '3',
         "title" => "Boolzapp",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-05-10",
@@ -42,6 +46,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/vue-boolzapp.git",
     ],
     [
+        'category_id' => '3',
         "title" => "Boolflix",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-05-24",
@@ -52,6 +57,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/vite-boolflix.git",
     ],
     [
+        'category_id' => '3',
         "title" => "Football League",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-05-29",
@@ -62,6 +68,7 @@ return [
         "link_github" => "https://github.com/AlessioAbbati/proj-html-vuejs.git",
     ],
     [
+        'category_id' => '4',
         "title" => "Travel Agency",
         "author" => "Alessio Abbati",
         "creation_date" => "2023-07-04",
