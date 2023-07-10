@@ -23,7 +23,7 @@
 
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
-            <select class="form-select" id="category" name="category_id">
+            <select class="form-select @error('category_id') is-invalid @enderror"  id="category" name="category_id">
                 <option selected>Change Category</option>
 
                 @foreach ($categories as $category)
